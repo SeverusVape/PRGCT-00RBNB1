@@ -5,3 +5,17 @@
 * {
     font-family: "Roboto Mono", monospace;
 }
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    @apply w-full border my-1 py-2 px-3 rounded-lg;
+}
+
+button {
+    @apply bg-gray-300;
+}
+
+.login-btn {
+    @apply bg-primaryRed w-full rounded-lg p-2 text-white;
+}
