@@ -7,10 +7,16 @@ const LoginPage = () => {
             <div className="mb-60">
                 <h1 className="text-3xl text-center mb-4">Login</h1>
                 <form className="max-w-md mx-auto">
-                    <input type="email" placeholder="your@email.com" required />
+                    <input
+                        type="email"
+                        placeholder="your@email.com"
+                        autoComplete="email"
+                        required
+                    />
                     <input
                         type="password"
                         placeholder="your_password"
+                        autoComplete="password"
                         required
                     />
                     <button className="login-btn">Log In</button>
