@@ -1,22 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 
 const LoginPage = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [redirect, setRedirect] = useState(false);
+
+    const handleLoginSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post("/login", {
+                email,
+                password,
+            });
+            setRedirect(true);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    if (redirect) {
+        return <Navigate to="/" />;
+    }
+
     return (
         <div className="mt-4 grow flex items-center justify-around">
             <div className="mb-60">
                 <h1 className="text-3xl text-center mb-4">Login</h1>
-                <form className="max-w-md mx-auto">
+                <form className="max-w-md mx-auto" onSubmit={handleLoginSubmit}>
                     <input
                         type="email"
                         placeholder="your@email.com"
                         autoComplete="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                     <input
                         type="password"
                         placeholder="your_password"
                         autoComplete="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                     <button className="login-btn">Log In</button>
