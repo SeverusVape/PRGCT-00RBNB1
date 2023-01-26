@@ -3,6 +3,9 @@ import "./index.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { LoginPage, HomePage, RegisterPage } from "./pages";
 import Layout from "./components/Layout";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:3000";
 
 function App() {
     return (
