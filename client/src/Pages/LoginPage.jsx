@@ -24,7 +24,7 @@ const LoginPage = () => {
                         {" "}
                         Don't have an account yet?{" "}
                         <Link
-                            className="underline text-rose-500"
+                            className="underline text-rose-500 font-semibold"
                             to={"/register"}
                         >
                             Register now!

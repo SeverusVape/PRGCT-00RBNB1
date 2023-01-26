@@ -28,7 +28,10 @@ const RegisterPage = () => {
                     <button className="login-btn">Log In</button>
                     <div className=" text-center py-2 text-gray-600">
                         Already a member?{" "}
-                        <Link className="underline text-rose-500" to={"/login"}>
+                        <Link
+                            className="underline text-rose-500 font-semibold"
+                            to={"/login"}
+                        >
                             Log in
                         </Link>
                     </div>
